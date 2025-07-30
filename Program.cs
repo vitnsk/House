@@ -37,11 +37,10 @@ while (true)
 
     if (numFlat > qFlat)
     {
-        Console.WriteLine("Квартиры с таким номером в доме нет");
+        Console.WriteLine("\nКвартиры с таким номером в доме нет");
     }
     else
     {
-
         int numEntrance = 1 + (numFlat - 1) / qFloorFlat;
         int numFloor = 1 + ((numFlat - 1) % qFloorFlat) / 4;
 
@@ -49,28 +48,22 @@ while (true)
         {
             numFlat = numFlat - 4;
         }
-        while (numFlat > 4);
-        string answ;
+        while (numFlat > 4);       
 
-        answ = (numFlat == 1 || numFlat == -3) ? "Ближняя слева " : (numFlat == 2 || numFlat == -2) ? "Дальняя слева " : (numFlat == 3 || numFlat == -1) ? "Дальняя справа " : (numFlat == 4 || numFlat == 0) ? "Ближняя справа " : "Ошибка ";
+        string answ = (numFlat == 1 || numFlat == -3) ? "Ближняя слева " : (numFlat == 2 || numFlat == -2) ? "Дальняя слева " : (numFlat == 3 || numFlat == -1) ? "Дальняя справа " : (numFlat == 4 || numFlat == 0) ? "Ближняя справа " : "Ошибка ";
         Console.Write("Положение квартиры: ");
-        Console.Write(answ);
-        Console.Write("\n");
+        Console.Write(answ +"\n");       
         Console.Write("Номер подъезда: ");
-        Console.Write(numEntrance);
-        Console.Write("\n");
+        Console.Write(numEntrance + "\n");      
         Console.Write("Номер этажа: ");
-        Console.Write(numFloor);
-        Console.Write("\n");
-        //Console.Write("Вывод: ");
-        //Console.Write(numFlat);
+        Console.Write(numFloor + "\n");             
     }
-    Console.Write("\n");
-    Console.Write("Хотите продолжить нажмите любую клавишу \n");    
-    Console.Write("Хотите выйти нажмите Q \n");
+    
+    Console.Write("\nХотите продолжить нажмите любую клавишу\n");    
+    Console.Write("Хотите выйти нажмите Q\n");
     
     ConsoleKeyInfo keyInfo = Console.ReadKey();
     if (keyInfo.Key == ConsoleKey.Q)
         break;
-    
+    Console.Write("\n"); 
 }
