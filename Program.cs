@@ -15,7 +15,6 @@ while (true)
         Console.WriteLine("Введите корректное значение количества этажей.");
     }
 
-
     while (true)
     {
         Console.Write("Введите количество подъездов: ");
@@ -24,7 +23,6 @@ while (true)
         Console.WriteLine("Введите корректное значение количества подъездов.");
     }
 
-
     while (true)
     {
         Console.Write("Введите номер квартиры: ");
@@ -32,25 +30,26 @@ while (true)
             break;
         Console.WriteLine("Введите корректное значение количества подъездов.");
     }
-    int qFloorFlat = qFloor * 4;
-    int qFlat = qFloorFlat * qFloor * qEntrance;
 
-    if (numFlat > qFlat)
+    int qFloorFlat = qFloor * 4; //  определяем количество квартир в подъезде
+    int qFlat = qFloorFlat * qFloor * qEntrance; //  определяем количество квартир в доме
+
+    if (numFlat > qFlat) // Проверяем есть ли такая квартира в доме
     {
         Console.WriteLine("\nКвартиры с таким номером в доме нет");
     }
     else
     {
-        int numEntrance = 1 + (numFlat - 1) / qFloorFlat;
-        int numFloor = 1 + ((numFlat - 1) % qFloorFlat) / 4;
+        int numEntrance = 1 + (numFlat - 1) / qFloorFlat;  // определяем номер подъезда
+        int numFloor = 1 + ((numFlat - 1) % qFloorFlat) / 4; // определяем номер этажа 
 
-        do
+        do  //определяем положение квартиры на этаже
         {
             numFlat = numFlat - 4;
         }
-        while (numFlat > 4);       
-
+        while (numFlat > 4); 
         string answ = (numFlat == 1 || numFlat == -3) ? "Ближняя слева " : (numFlat == 2 || numFlat == -2) ? "Дальняя слева " : (numFlat == 3 || numFlat == -1) ? "Дальняя справа " : (numFlat == 4 || numFlat == 0) ? "Ближняя справа " : "Ошибка ";
+        
         Console.Write("Положение квартиры: ");
         Console.Write(answ +"\n");       
         Console.Write("Номер подъезда: ");
